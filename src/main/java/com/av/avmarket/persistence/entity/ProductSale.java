@@ -18,6 +18,14 @@ public class ProductSale {
   @Column(name = "estado")
   private Boolean status;
 
+  @ManyToOne
+  @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+  private Sale sale;
+
+  @ManyToOne
+  @JoinColumn(name = "id_producto", insertable = false, updatable = false)
+  private Product product;
+
   public ProductSalePK getId() {
     return id;
   }

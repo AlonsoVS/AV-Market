@@ -2,6 +2,7 @@ package com.av.avmarket.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compras")
@@ -26,6 +27,13 @@ public class Sale {
 
   @Column(name = "estado")
   private Character status;
+
+  @ManyToOne
+  @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+  private Client client;
+
+  @OneToMany(mappedBy = "product")
+  private List<ProductSale> products;
 
   public Integer getSaleId() {
     return saleId;

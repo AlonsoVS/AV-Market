@@ -1,6 +1,7 @@
 package com.av.avmarket.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias")
@@ -16,6 +17,9 @@ public class Category {
 
   @Column(name = "estado")
   private Boolean status;
+
+  @OneToMany(mappedBy = "category")
+  List<Product> products;
 
   public Integer getCategoryId() {
     return categoryId;

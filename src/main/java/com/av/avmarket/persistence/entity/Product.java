@@ -30,6 +30,11 @@ public class Product {
   @Column(name = "estado")
   private Boolean status;
 
+  @ManyToOne
+  @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+  private Category category;
+
+
   public Integer getProductId() {
     return productId;
   }
