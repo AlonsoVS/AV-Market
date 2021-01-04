@@ -18,6 +18,14 @@ public class Category {
   @Column(name = "estado")
   private Boolean status;
 
+  public List<Product> getProducts() {
+    return products;
+  }
+
+  public void setProducts(List<Product> products) {
+    this.products = products;
+  }
+
   @OneToMany(mappedBy = "category")
   List<Product> products;
 
