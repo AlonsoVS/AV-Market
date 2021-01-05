@@ -19,6 +19,7 @@ public class ProductSale {
   private Boolean status;
 
   @ManyToOne
+  @MapsId("saleId")
   @JoinColumn(name = "id_compra", insertable = false, updatable = false)
   private Sale sale;
 
@@ -56,5 +57,21 @@ public class ProductSale {
 
   public void setStatus(Boolean status) {
     this.status = status;
+  }
+
+  public Sale getSale() {
+    return sale;
+  }
+
+  public void setSale(Sale sale) {
+    this.sale = sale;
+  }
+
+  public Product getProduct() {
+    return product;
+  }
+
+  public void setProduct(Product product) {
+    this.product = product;
   }
 }

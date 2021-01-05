@@ -11,4 +11,20 @@ public class ProductSalePK implements Serializable {
 
   @Column(name = "id_producto")
   private Integer productId;
+
+  public Integer getSaleId() {
+    return saleId;
+  }
+
+  public void setSaleId(Integer saleId) {
+    this.saleId = saleId;
+  }
+
+  public Integer getProductId() {
+    return productId;
+  }
+
+  public void setProductId(Integer productId) {
+    this.productId = productId;
+  }
 }
